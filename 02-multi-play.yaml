@@ -1,43 +1,45 @@
 ---
-- name: Update n1 servers
+- name: Update n1 server
   hosts: n1
+  become: yes
 
   tasks:
-  - name: Create Directory
-    file:
-      path: /home/ec2-user/new_dir
-      state: directory
+    - name: Create new_dir on n1
+      file:
+        path: /home/ec2-user/new_dir
+        state: directory
 
-  - name: Create Directory
-    file:
-      path: /home/ec2-user/new_dir_1
-      state: directory
+    - name: Create new_dir_1 on n1
+      file:
+        path: /home/ec2-user/new_dir_1
+        state: directory
 
-- name: Update n2 servers
+- name: Update n2 server
   hosts: n2
+  become: yes
 
   tasks:
-  - name: Create Directory
-    file:
-      path: /home/ec2-user/new_dir_1
-      state: directory
+    - name: Create new_dir_1 on n2
+      file:
+        path: /home/ec2-user/new_dir_1
+        state: directory
 
-        - name: Create Directory
-    file:
-      path: /home/ec2-user/new_dir_2
-      state: directory
+    - name: Create new_dir_2 on n2
+      file:
+        path: /home/ec2-user/new_dir_2
+        state: directory
 
-      - name: Update group1 servers
-  hosts: g1
+- name: Update group1 servers
+  hosts: group1
+  become: yes
 
   tasks:
-  - name: Create Directory
-    file:
-      path: /home/ec2-user/new_dir_group1
-      state: directory
+    - name: Create new_dir_group1 on group1 nodes
+      file:
+        path: /home/ec2-user/new_dir_group1
+        state: directory
 
-  - name: Create Directory
-    file:
-      path: /home/ec2-user/new_dir_group2
-      state: directory
-...
+    - name: Create new_dir_group2 on group1 nodes
+      file:
+        path: /home/ec2-user/new_dir_group2
+        state: directory
