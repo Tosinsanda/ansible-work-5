@@ -1,22 +1,18 @@
----
-- name: Install HTTP server
+- name: Install HTTP server on Ubuntu (n1)
+  hosts: n1
+  become: yes
+  tasks:
+    - name: Install Apache on Ubuntu
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+- name: Install HTTP server on RedHat (n2)
   hosts: n2
   become: yes
-
   tasks:
-    - name: Install HTTPD
+    - name: Install Apache on RedHat
       yum:
         name: httpd
         state: present
-
-    - name: Start HTTPD
-      service:
-        name: httpd
-        state: started
-
-    - name: Enable HTTPD
-      service:
-        name: httpd
-        enabled: yes
-
-...
