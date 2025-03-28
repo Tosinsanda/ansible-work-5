@@ -4,9 +4,12 @@
   become: yes
 
   tasks:
-    - name: Update maintenance
+    - name: Remove old web content
+      file:
+        path: /var/www/html
+        state: absent
+
+    - name: Update maintenance page
       copy:
         src: Maintenance.html
-        dest: /var/www/html/Index.html
-
-...
+        dest: /var/www/html/index.html
