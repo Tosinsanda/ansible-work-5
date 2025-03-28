@@ -1,29 +1,46 @@
 ---
 - name: Update n1 server
   hosts: n1
+<<<<<<< HEAD
   become: yes
 
   tasks:
     - name: Create new_dir on n1
+=======
+  become: true
+  tasks:
+    - name: Create directory
+>>>>>>> ba5fe50 (Local updates to 02-multi-play.yaml on Ansible master)
       file:
         path: /home/ec2-user/new_dir
         state: directory
 
+<<<<<<< HEAD
     - name: Create new_dir_1 on n1
+=======
+    - name: Create another directory
+>>>>>>> ba5fe50 (Local updates to 02-multi-play.yaml on Ansible master)
       file:
         path: /home/ec2-user/new_dir_1
         state: directory
 
 - name: Update n2 server
   hosts: n2
+<<<<<<< HEAD
   become: yes
 
   tasks:
     - name: Create new_dir_1 on n2
+=======
+  become: true
+  tasks:
+    - name: Create directory
+>>>>>>> ba5fe50 (Local updates to 02-multi-play.yaml on Ansible master)
       file:
         path: /home/ec2-user/new_dir_1
         state: directory
 
+<<<<<<< HEAD
     - name: Create new_dir_2 on n2
       file:
         path: /home/ec2-user/new_dir_2
@@ -32,15 +49,36 @@
 - name: Update group1 servers
   hosts: group1
   become: yes
+=======
+    - name: Create another directory
+      file:
+        path: /home/ec2-user/new_dir_2
+        state: directory
+>>>>>>> ba5fe50 (Local updates to 02-multi-play.yaml on Ansible master)
 
+- name: Update group1 servers
+  hosts: group1
+  become: true
   tasks:
+<<<<<<< HEAD
     - name: Create new_dir_group1 on group1 nodes
+=======
+    - name: Create directory for group1
+>>>>>>> ba5fe50 (Local updates to 02-multi-play.yaml on Ansible master)
       file:
         path: /home/ec2-user/new_dir_group1
         state: directory
 
+<<<<<<< HEAD
     - name: Create new_dir_group2 on group1 nodes
       file:
         path: /home/ec2-user/new_dir_group2
         state: directory
 ...
+=======
+    - name: Create another directory for group1
+      file:
+        path: /home/ec2-user/new_dir_group2
+        state: directory
+...
+>>>>>>> ba5fe50 (Local updates to 02-multi-play.yaml on Ansible master)
