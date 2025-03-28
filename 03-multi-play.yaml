@@ -5,7 +5,7 @@
 
   tasks:
     - name: Install HTTPD
-      YUM:
+      yum:
         name: httpd
         state: present
 
@@ -13,11 +13,10 @@
       service:
         name: httpd
         state: started
-        
 
-    - name: enable HTTPD
+    - name: Enable HTTPD
       service:
         name: httpd
         enabled: yes
-        
+
 ...
