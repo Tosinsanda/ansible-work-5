@@ -9,7 +9,14 @@
         path: /var/www/html
         state: absent
 
+    - name: Recreate /var/www/html
+      file:
+        path: /var/www/html
+        state: directory
+        mode: '0755'
+
     - name: Update maintenance page
       copy:
         src: Maintenance.html
         dest: /var/www/html/index.html
+...
