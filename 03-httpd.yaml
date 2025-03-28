@@ -1,3 +1,4 @@
+---
 - name: Install HTTP server on Ubuntu (n1)
   hosts: n1
   become: yes
@@ -16,3 +17,16 @@
       yum:
         name: httpd
         state: present
+
+    - name: Start HTTPD
+      service:
+        name: httpd
+        state: started
+
+    - name: Enable HTTPD
+      service:
+        name: httpd
+        enabled: yes
+
+...
+
