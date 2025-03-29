@@ -1,8 +1,15 @@
 <html>
+    <head>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
     <body>
-        <center>
-            <h1>Feyikemi has a BIG HEAD and likes to sleep a lot</h1>
-            <p>... and yes, this is what i decide to use this practice to do</p>
-            <p>I SAID WHAT I SAID</p>
+        <h1>The Server Operating System: {{ ansible_distribution }}</h1>
+        <p>...</p>
+        <p>I SAID WHAT I SAID</p>
+        <h1>The Server Hostname: {{ ansible_os_family }}</h1>
     </body>
 </html>
