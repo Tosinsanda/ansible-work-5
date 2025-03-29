@@ -1,0 +1,22 @@
+---
+- name: Static Page
+  hosts: g1
+  become: yes
+
+  tasks:
+    - name: Remove old web content
+      file:
+        path: /var/www/html
+        state: absent
+
+    - name: Recreate /var/www/html
+      file:
+        path: /var/www/html
+        state: directory
+        mode: '0755'
+
+    - name: Update Static page
+      copy:
+        src: static.html
+        dest: /var/www/html/static.html
+...
