@@ -1,0 +1,14 @@
+---
+- name: Install PHP (Ubuntu)
+  apt:
+    name: php
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install PHP (Amazon Linux / RHEL)
+  yum:
+    name: php
+    state: present
+  when: ansible_os_family == "RedHat"
+...
